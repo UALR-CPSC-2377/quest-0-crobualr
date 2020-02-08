@@ -162,8 +162,10 @@ char processUserInput () {
         This function will print out a message for the user to enter a character
         The character will then be returned,
     */
-	
-    return 'n'; // placeholder
+	cout << "Enter a Guess!: ";
+	char userCharacterGuess;
+	cin >> userCharacterGuess;
+    return userCharacterGuess; // placeholder
 }
 
 void fillLetters (char guessChar, string secretWord) {
