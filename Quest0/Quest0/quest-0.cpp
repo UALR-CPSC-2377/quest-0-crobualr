@@ -138,6 +138,23 @@ void printNumberOfTries () {
     /* this function will print out the number of tries that the user has attempted
         as well as a message
     */
+	switch (currentGuessNumber) {
+	case 0:
+		cout << "NUMBER OF TRIES: 4" << endl;
+		break;
+	case 1:
+		cout << "NUMBER OF TRIES: 3" << endl;
+		break;
+	case 2:
+		cout << "NUMBER OF TRIES: 2" << endl;
+		break;
+	case 3:
+		cout << "NUMBER OF TRIES: 1" << endl;
+		break;
+	case 4:
+		cout << "NUMBER OF TRIES: 0" << end;
+		break;
+	}
 }
 
 char processUserInput () {
@@ -145,7 +162,7 @@ char processUserInput () {
         This function will print out a message for the user to enter a character
         The character will then be returned,
     */
-
+	
     return 'n'; // placeholder
 }
 
@@ -159,6 +176,9 @@ void fillLetters (char guessChar, string secretWord) {
 	for (int i = 0; i < secretWordlength; i++) {
 		if (guessChar == secretWord[i]) {
 			currentGuessString[i] == guessChar;
+		}
+		else {
+			currentGuessNumber += 1;
 		}
 	}
 }
