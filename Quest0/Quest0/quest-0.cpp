@@ -111,6 +111,27 @@ void printGameBoard (string guess) {
         The width of the box is the length of the guess string + 2*padding.
         The padding defines the number of spaces on either side of the underline
     */
+	int width = guess.length() + 2 * padding;
+	cout << "+";
+	for (int i = 0; i < width; i++) {
+		cout << "-";
+	}
+	cout << "+" << endl;
+
+	cout << "|   ";
+	cout << guess;
+	cout << "   |" << endl;
+
+	cout << "|   ";
+	string wordUnderline = string(guess.length(), '_');
+	cout << wordUnderline;
+	cout << "   |" << endl;
+
+	cout << "+";
+	for (int i = 0; i < width; i++) {
+		cout << "-";
+	}
+	cout << "+" << endl;
 }
 
 void printNumberOfTries () {
