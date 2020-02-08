@@ -155,6 +155,12 @@ void fillLetters (char guessChar, string secretWord) {
         If any characters in the secretWord match with the guessChar, those
         characters in currentGuessString need to be changed.
     */
+	int secretWordlength = secretWord.length();
+	for (int i = 0; i < secretWordlength; i++) {
+		if (guessChar == secretWord[i]) {
+			currentGuessString[i] == guessChar;
+		}
+	}
 }
 
 void pauseConsole () {
