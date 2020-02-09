@@ -110,11 +110,11 @@ void printGameOver (string currentGuess) {
         "CONGRATS" if the the player was successful and "YOU FAILED" if they werent.
     */
 	if (isGameSuccessful(currentGuess) == true) {
-		cout << "Country: " << correctCountry << endl;
+		printGameBoard(currentGuess);
 		cout << "CONGRATS!";
 	}
 	else {
-		cout << "Country: " << correctCountry << endl;
+		printGameBoard(currentGuess);
 		cout << "YOU FAILED!";
 	}
 }
@@ -128,26 +128,6 @@ void printGameBoard (string guess) {
         The padding defines the number of spaces on either side of the underline
     */
 	int width = guess.length() + 2 * padding;
-	/*cout << "+";
-	for (int i = 0; i < width; i++) {
-		cout << "-";
-	}
-	cout << "+" << endl;
-
-	cout << "|   ";
-	cout << guess;
-	cout << "   |" << endl;
-
-	cout << "|   ";
-	string wordUnderline = string(guess.length(), '_');
-	cout << wordUnderline;
-	cout << "   |" << endl;
-
-	cout << "+";
-	for (int i = 0; i < width; i++) {
-		cout << "-";
-	}
-	cout << "+" << endl;*/
 	for (int i = 0; i < width; i++) {//First row
 		if (i == 0 || i == width - 1) {
 			cout << "+";
