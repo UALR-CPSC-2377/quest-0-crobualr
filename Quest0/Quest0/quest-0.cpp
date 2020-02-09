@@ -82,18 +82,26 @@ int main () {
     printGameOver(currentGuessString);
 }
 
-bool isGameDone (string currentGuess) {
-    /*  This function determines if the game is over */
-
-    return true; // placeholder
+bool isGameDone(string currentGuess) {
+	/*  This function determines if the game is over */
+	if (currentGuess == correctCountry || currentGuessNumber == maxNumberGuesses) {
+		return true; // placeholder
+	}
+	else {
+		return false;
+	}
 }
 
 bool isGameSuccessful (string currentGuess) {
     /*  This function determines if a player succesfully
         guessed all of the characters
     */
-
-    return false; // placeholder
+	if (currentGuess == correctCountry) {
+		return true;
+	}
+	else {
+		return false;
+	}
 }
 
 void printGameOver (string currentGuess) {
@@ -101,6 +109,12 @@ void printGameOver (string currentGuess) {
         This function will print out the game board with a message at the bottom
         "CONGRATS" if the the player was successful and "YOU FAILED" if they werent.
     */
+	if (isGameSuccessful(currentGuess) == true) {
+		cout << "CONGRATS";
+	}
+	else {
+		cout << "YOU FAILED";
+	}
 }
 
 void printGameBoard (string guess) {
@@ -152,7 +166,7 @@ void printNumberOfTries () {
 		cout << "NUMBER OF TRIES: 1" << endl;
 		break;
 	case 4:
-		cout << "NUMBER OF TRIES: 0" << end;
+		cout << "NUMBER OF TRIES: 0" << endl;
 		break;
 	}
 }
@@ -176,7 +190,7 @@ void fillLetters (char guessChar, string secretWord) {
     */
 	int secretWordlength = secretWord.length();
 	for (int i = 0; i < secretWordlength; i++) {
-		if (guessChar == secretWord[i]) {
+		if (secretWord[i] == guessChar) {
 			currentGuessString[i] == guessChar;
 		}
 		else {
