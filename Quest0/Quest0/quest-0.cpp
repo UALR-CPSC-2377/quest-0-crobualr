@@ -128,7 +128,7 @@ void printGameBoard (string guess) {
         The padding defines the number of spaces on either side of the underline
     */
 	int width = guess.length() + 2 * padding;
-	cout << "+";
+	/*cout << "+";
 	for (int i = 0; i < width; i++) {
 		cout << "-";
 	}
@@ -147,7 +147,56 @@ void printGameBoard (string guess) {
 	for (int i = 0; i < width; i++) {
 		cout << "-";
 	}
-	cout << "+" << endl;
+	cout << "+" << endl;*/
+	for (int i = 0; i < width; i++) {//First row
+		if (i == 0 || i == width - 1) {
+			cout << "+";
+		}
+		else {
+			cout << "-";
+		}
+	}
+	cout << endl;
+	for (int i = 0; i < width; i++) {//Second row
+		if (i == 0 || i == width - 1) {
+			cout << "|";
+		}
+		else if (i == width / padding) {
+			cout << guess;
+		}
+		else if (i > 0 && i < padding) {
+			cout << " ";
+		}
+		else if (i >= guess.length() + padding) {
+			cout << " ";
+		}
+	}
+	cout << endl;
+	for (int i = 0; i < width; i++) {//Third row
+		if (i == 0 || i == width - 1) {
+			cout << "|";
+		}
+		else if (i == width / padding) {
+			string wordUnderline = string(guess.length(), '_');
+			cout << wordUnderline;
+		}
+		else if (i > 0 && i < padding) {
+			cout << " ";
+		}
+		else if (i >= guess.length() + padding) {
+			cout << " ";
+		}
+	}
+	cout << endl;
+	for (int i = 0; i < width; i++) {//Fourth row
+		if (i == 0 || i == width - 1) {
+			cout << "+";
+		}
+		else {
+			cout << "-";
+		}
+	}
+	cout << endl;
 }
 
 void printNumberOfTries () {
