@@ -110,10 +110,12 @@ void printGameOver (string currentGuess) {
         "CONGRATS" if the the player was successful and "YOU FAILED" if they werent.
     */
 	if (isGameSuccessful(currentGuess) == true) {
-		cout << "CONGRATS";
+		cout << "Country: " << correctCountry << endl;
+		cout << "CONGRATS!";
 	}
 	else {
-		cout << "YOU FAILED";
+		cout << "Country: " << correctCountry << endl;
+		cout << "YOU FAILED!";
 	}
 }
 
@@ -187,15 +189,17 @@ void fillLetters (char guessChar, string secretWord) {
         This function will modify the global variable currentGuessString.
         If any characters in the secretWord match with the guessChar, those
         characters in currentGuessString need to be changed.
-    */
+    */ 
+	bool characterFound = false;
 	int secretWordlength = secretWord.length();
 	for (int i = 0; i < secretWordlength; i++) {
 		if (secretWord[i] == guessChar) {
 			currentGuessString[i] = guessChar;
+			characterFound = true;
 		}
-		else {
-			currentGuessNumber += 1;
-		}
+	}
+	if (characterFound == false) {
+		currentGuessNumber++;
 	}
 }
 
