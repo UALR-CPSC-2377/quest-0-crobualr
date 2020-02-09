@@ -191,7 +191,7 @@ void fillLetters (char guessChar, string secretWord) {
 	int secretWordlength = secretWord.length();
 	for (int i = 0; i < secretWordlength; i++) {
 		if (secretWord[i] == guessChar) {
-			currentGuessString[i] == guessChar;
+			currentGuessString[i] = guessChar;
 		}
 		else {
 			currentGuessNumber += 1;
